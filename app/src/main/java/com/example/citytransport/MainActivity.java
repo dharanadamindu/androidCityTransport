@@ -6,12 +6,15 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import java.time.Instant;
+
 public class MainActivity extends AppCompatActivity {
     private Button btn_routeFind;
 //    private Button btn_timeTable;
     private Button btn_busRoutes;
     private Button btn_aboutUs;
     private Button btn_help;
+    private Button btn_getLocation;
 
 
     @Override
@@ -43,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btn_aboutUs = findViewById(R.id.btnAboutUs);
+        btn_aboutUs = findViewById(R.id.btnGetLocation);
         btn_aboutUs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -58,6 +61,15 @@ public class MainActivity extends AppCompatActivity {
                 openHelp();
             }
         });
+
+        btn_getLocation = findViewById(R.id.btnGetLocation);
+        btn_getLocation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openGetLocation();
+            }
+        });
+
     }
 
     public void openFindRoute(){
@@ -83,5 +95,10 @@ public class MainActivity extends AppCompatActivity {
     public void openHelp(){
         Intent int5 = new Intent(MainActivity.this,Help.class);
         startActivity(int5);
+    }
+
+    public void openGetLocation(){
+        Intent int6 = new Intent(MainActivity.this,GetLocation.class);
+        startActivity(int6);
     }
 }
