@@ -59,10 +59,10 @@ public class GetLocation extends AppCompatActivity {
                 @Override
                 public void onReceive(Context context, Intent intent) {
 
-                   // txt_lang.append("\n" +intent.getExtras().get("coordinates_long"));
-                    //txt_lat.append("\n" +intent.getExtras().get("coordinates_lat"));
+                    txt_lang.append("\n" +intent.getExtras().get("coordinates_long"));
+                    txt_lat.append("\n" +intent.getExtras().get("coordinates_lat"));
 
-//                    lang = (String) intent.getExtras().get("coordinates_long");
+//                  lang = (String) intent.getExtras().get("coordinates_long");
 //                  lat = (String) intent.getExtras().get("coordinates_lat");
                     lat="6.868263";
                     lang="79.883704";
