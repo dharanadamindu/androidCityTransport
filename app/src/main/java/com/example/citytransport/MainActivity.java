@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btn_aboutUs = findViewById(R.id.btnGetLocation);
+        btn_aboutUs = findViewById(R.id.btn_AboutUs);
         btn_aboutUs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -77,10 +77,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(int1);
     }
 
-    public void openTimeTable(){
-        Intent int2 = new Intent(MainActivity.this,TimeTable.class);
-        startActivity(int2);
-    }
 
     public void openBusRoutes(){
         Intent int3 = new Intent(MainActivity.this,BusRoutes.class);

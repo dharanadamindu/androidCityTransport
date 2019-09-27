@@ -103,7 +103,7 @@
 
 
     <Button
-        android:id="@+id/btnGetLocation"
+        android:id="@+id/btn_AboutUs"
         android:layout_width="200dp"
         android:layout_height="50dp"
         android:background="@drawable/btn_rec_a"
