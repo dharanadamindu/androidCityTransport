@@ -48,7 +48,7 @@ public class GetLocation extends AppCompatActivity {
     private BroadcastReceiver broadcastReceiver;
     private String lang;
     private String lat;
-    private static String URL_UPDATECODINATES = "http://192.168.1.101/citytransport_android/locationUpdate.php";
+    private static String URL_UPDATECODINATES = "http://192.168.1.103/citytransport_android/locationUpdate.php";
 
 
     @Override
@@ -59,11 +59,13 @@ public class GetLocation extends AppCompatActivity {
                 @Override
                 public void onReceive(Context context, Intent intent) {
 
-                    txt_lang.append("\n" +intent.getExtras().get("coordinates_long"));
-                    txt_lat.append("\n" +intent.getExtras().get("coordinates_lat"));
+                   // txt_lang.append("\n" +intent.getExtras().get("coordinates_long"));
+                    //txt_lat.append("\n" +intent.getExtras().get("coordinates_lat"));
 
 //                    lang = (String) intent.getExtras().get("coordinates_long");
 //                  lat = (String) intent.getExtras().get("coordinates_lat");
+                    lat="6.868263";
+                    lang="79.883704";
             }
             };
         }
