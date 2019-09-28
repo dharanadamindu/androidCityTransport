@@ -13,11 +13,9 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.telephony.TelephonyManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -28,15 +26,11 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.text.SimpleDateFormat;
 import java.util.HashMap;
 import java.util.Map;
-
-import static java.lang.Thread.*;
 
 
 public class GetLocation extends AppCompatActivity {
@@ -48,26 +42,13 @@ public class GetLocation extends AppCompatActivity {
     private BroadcastReceiver broadcastReceiver;
     private String lang;
     private String lat;
-    private static String URL_UPDATECODINATES = "http://192.168.1.101/citytransport_android/locationUpdate.php";
+    private static String URL_UPDATECODINATES = "http://192.168.1.100/citytransport_android/locationUpdate.php";
 
 
     @Override
     protected void onResume(){
         super.onResume();
-        if (broadcastReceiver == null){
-            broadcastReceiver = new BroadcastReceiver() {
-                @Override
-                public void onReceive(Context context, Intent intent) {
 
-                    txt_lang.append("\n" +intent.getExtras().get("coordinates_long"));
-                    txt_lat.append("\n" +intent.getExtras().get("coordinates_lat"));
-
-//                    lang = (String) intent.getExtras().get("coordinates_long");
-//                  lat = (String) intent.getExtras().get("coordinates_lat");
-            }
-            };
-        }
-        registerReceiver(broadcastReceiver,new IntentFilter("location_update"));
     }
     @Override
     protected void onDestroy(){
@@ -88,6 +69,20 @@ public class GetLocation extends AppCompatActivity {
         txt_lang = (TextView) findViewById(R.id.txt_lang);
         txt_lat = (TextView) findViewById(R.id.txt_lat);
 
+        if (broadcastReceiver == null){
+            broadcastReceiver = new BroadcastReceiver() {
+                @Override
+                public void onReceive(Context context, Intent intent) {
+//
+//                    txt_lang.append("\n" +);
+//                    txt_lat.append("\n" +);
+
+                    lang = intent.getExtras().get("coordinates_long").toString();
+                    lat = intent.getExtras().get("coordinates_lat").toString();
+                }
+            };
+        }
+        registerReceiver(broadcastReceiver,new IntentFilter("location_update"));
 
         if (!runtime_permission())
             enable_buttons();
@@ -182,6 +177,8 @@ public class GetLocation extends AppCompatActivity {
             @Override
             protected Map<String,String> getParams() throws AuthFailureError{
                 Map<String,String> params = new HashMap<>();
+
+
                 //String scheduleNo = "42";
                 params.put("lat",lat);
                 params.put("lng",lang);

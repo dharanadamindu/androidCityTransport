@@ -40,6 +40,7 @@
         android:layout_marginEnd="249dp"
         android:layout_marginRight="249dp"
         android:layout_marginBottom="476dp"
+        android:contentDescription="TODO"
         app:srcCompat="@drawable/buslogo" />
 
 
