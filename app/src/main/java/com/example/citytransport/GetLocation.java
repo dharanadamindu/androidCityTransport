@@ -32,7 +32,6 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-
 public class GetLocation extends AppCompatActivity {
     //Variables
     private Button button_start;
@@ -42,7 +41,7 @@ public class GetLocation extends AppCompatActivity {
     private BroadcastReceiver broadcastReceiver;
     private String lang;
     private String lat;
-    private static String URL_UPDATECODINATES = "http://192.168.1.100/citytransport_android/locationUpdate.php";
+    private static String URL_UPDATECODINATES = "http://192.168.10.100/citytransport_android/locationUpdate.php";
 
 
     @Override
@@ -76,6 +75,8 @@ public class GetLocation extends AppCompatActivity {
 //
 //                    txt_lang.append("\n" +);
 //                    txt_lat.append("\n" +);
+//                    textView.append("\n" +intent.getExtras().get("coordinates_long"));
+//                    textView.append("\n" +intent.getExtras().get("coordinates_lat"));
 
                     lang = intent.getExtras().get("coordinates_long").toString();
                     lat = intent.getExtras().get("coordinates_lat").toString();

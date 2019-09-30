@@ -10,9 +10,9 @@
         android:id="@+id/txt_lang"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginLeft="56dp"
+        android:layout_marginTop="60dp"
         android:text="lang"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_start" />
@@ -32,9 +32,9 @@
         android:id="@+id/btn_start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginLeft="56dp"
+        android:layout_marginTop="40dp"
         android:text="Start"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -44,6 +44,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Stop"
-        tools:layout_editor_absoluteX="250dp"
-        tools:layout_editor_absoluteY="32dp" />
+        tools:layout_editor_absoluteX="242dp"
+        tools:layout_editor_absoluteY="40dp" />
 </android.support.constraint.ConstraintLayout>
